@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mobitor – Mobile Usage & Screen Time</title>
+  <meta name="description" content="Mobitor — a mobile application for tracking daily device usage, top apps, game time, notifications and custom widgets with privacy-first design." />
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+      line-height: 1.6;
+      background: Canvas;
+      color: CanvasText;
+    }
+    main { max-width: 860px; margin: 40px auto; padding: 0 20px 60px; }
+    h1, h2 { line-height: 1.25; margin: 0.6em 0 0.3em; }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.5rem; margin-top: 1.25em; }
+    p { margin: 0.5em 0; }
+    ul { padding-left: 1.2em; }
+    a { color: LinkText; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    hr { border: 0; height: 1px; background: color-mix(in oklab, CanvasText 15%, transparent); margin: 1.25rem 0; }
+    .section { margin-top: 2rem; }
+    .hero { display:flex; align-items:center; gap:1rem; padding: 2rem 0; }
+    .hero h1 { margin: 0; }
+    .hero p { font-size: 1.125rem; color: GrayText; margin: 0.25rem 0 0; }
+    .hero img { width:64px; height:64px; border-radius:12px; object-fit:cover; }
+    .features { display: grid; gap: 1.5rem; margin-top: 2rem; }
+    .feature { padding: 1.25rem; border-radius: 8px; background: color-mix(in oklab, CanvasText 5%, transparent); }
+    .feature h3 { margin: 0 0 0.5rem 0; font-size: 1.25rem; }
+    .feature p { margin: 0; color: GrayText; }
+    .links { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; padding: 1.5rem; border-radius: 8px; background: color-mix(in oklab, CanvasText 5%, transparent); }
+    .links a { padding: 0.5rem 1rem; border-radius: 4px; background: color-mix(in oklab, LinkText 10%, transparent); color: LinkText; font-weight: 500; }
+    .links a:hover { background: color-mix(in oklab, LinkText 20%, transparent); text-decoration: none; }
+    .contact { margin-top: 2rem; padding: 1.5rem; border-radius: 8px; background: color-mix(in oklab, CanvasText 5%, transparent); text-align: center; }
+    @media (min-width: 640px) { .features { grid-template-columns: repeat(2, 1fr); } }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="hero" role="banner">
+      <img src="/assets/mobitor-icon.svg" alt="Mobitor icon" width="64" height="64" />
+      <div>
+        <h1>Mobitor</h1>
+        <p>Your mobile usage dashboard — widgets for daily usage, top apps, game time and more.</p>
+      </div>
+    </div>
+
+    <hr />
+
+    <section class="section">
+      <h2>About Mobitor</h2>
+      <p>Mobitor is a mobile application for tracking and analyzing how you use your smartphone. It provides a configurable dashboard of widgets showing daily usage time, the top apps you use, app launches, game time, headset usage and custom goals — all designed to help you understand and manage your screen time.</p>
+      <p>Mobitor runs on-device and focuses on privacy: only minimal, anonymized analytics are collected when enabled.</p>
+    </section>
+
+    <section class="section">
+      <h2>Key Features</h2>
+      <div class="features">
+        <div class="feature">
+          <h3>📊 Daily Usage & Widgets</h3>
+          <p>Customizable widgets show Today's usage, Daily Goal progress, and more — rearrange and hide widgets to tailor your dashboard.</p>
+        </div>
+        <div class="feature">
+          <h3>🔥 Top Apps & App Launches</h3>
+          <p>See the Top 3 most used apps and a breakdown of app launches to quickly identify where your time goes.</p>
+        </div>
+        <div class="feature">
+          <h3>🎮 Game Time & Social Insights</h3>
+          <p>Track game play time, social media usage and trends with helpful alerts when use exceeds your limits.</p>
+        </div>
+        <div class="feature">
+          <h3>🔔 Notifications & Permissions</h3>
+          <p>Optional notification listener and Usage Access permissions enable richer insights like notifications count and accurate foreground time. Permissions are requested transparently when needed.</p>
+        </div>
+        <div class="feature">
+          <h3>🎯 Daily Goals & Progress Tracker</h3>
+          <p>Set goals for screen time and review progress over days with simple controls to edit targets (hours/minutes).</p>
+        </div>
+        <div class="feature">
+          <h3>🔒 Privacy First</h3>
+          <p>Mobitor minimizes data collection. All core functionality works on-device; any telemetry is anonymized and optional.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Important Information</h2>
+      <div class="links">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Use</a>
+        <a href="/support.html">Support & Maintenance</a>
+      </div>
+      <p style="margin-top:0.75rem; color:GrayText;">Note: To provide full functionality the app may ask for Usage Access and Notification Listener permissions. These are requested only to improve accuracy of usage statistics and widget data.</p>
+    </section>
+
+    <section class="section">
+      <div class="contact">
+        <h2>Get in Touch</h2>
+        <p>Questions or feedback? We'd love to hear from you.</p>
+        <p>📧 <a href="mailto:mobitor.app@gmail.com">mobitor.app@gmail.com</a></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
