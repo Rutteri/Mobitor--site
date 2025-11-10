@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mobitor – User Guide</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+      line-height: 1.6;
+      background: Canvas;
+      color: CanvasText;
+    }
+    main { max-width: 860px; margin: 40px auto; padding: 0 20px 60px; }
+    h1, h2 { line-height: 1.25; margin: 0.6em 0 0.3em; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.25rem; margin-top: 1.25em; }
+    p { margin: 0.5em 0; }
+    .meta { color: GrayText; }
+    ul { padding-left: 1.2em; }
+    ol { padding-left: 1.2em; }
+    a { color: LinkText; }
+    hr { border: 0; height: 1px; background: color-mix(in oklab, CanvasText 15%, transparent); margin: 1.25rem 0; }
+    .section { margin-top: 1rem; }
+    code { background: color-mix(in oklab, CanvasText 10%, transparent); padding: 0.125rem 0.25rem; border-radius: 3px; font-family: ui-monospace, monospace; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+  <main aria-labelledby="page-title">
+    <h1 id="page-title">Mobitor — User Guide</h1>
+
+    <p class="meta">This guide explains what the app shows, which permissions it needs, and how to get the most out of each widget. It's written for everyday users, not developers.</p>
+    <p class="meta"><strong>Last updated:</strong> 2025-11-10</p>
+
+    <hr />
+
+    <section class="section" aria-labelledby="s1">
+      <h2 id="s1">What the app does</h2>
+      <p>Mobitor gives you a clear, private view of today's phone use:</p>
+      <ul>
+        <li>When you used the phone (15‑minute precision)</li>
+        <li>Likely sleep window (based on inactivity, broken by actual use)</li>
+        <li>How many notifications and app launches you had by hour</li>
+        <li>Time spent in broad categories like Social, Gaming, and Media</li>
+        <li>A gentle daily score vs. your goal, plus optional nudges</li>
+      </ul>
+      <p>Everything is computed on your device. The app does not send data anywhere.</p>
+    </section>
+
+    <section class="section" aria-labelledby="s2">
+      <h2 id="s2">First‑time setup (recommended)</h2>
+      <ol>
+        <li>Open the app and follow the short onboarding. If you skipped it, you can always set things later in Settings.</li>
+        <li>Grant Usage access (required for most widgets):
+          <ul>
+            <li>Open: Settings → Security &amp; privacy → More security &amp; privacy (or "Special app access") → Usage access</li>
+            <li>Tap "Mobitor" → Allow usage access</li>
+          </ul>
+        </li>
+        <li>Allow Notification access (for the notifications widget and richer signals):
+          <ul>
+            <li>Settings → Notifications → Notification access (or "Special app access" → Notification access)</li>
+            <li>Enable "Mobitor"</li>
+          </ul>
+        </li>
+        <li>On Android 13+ you may be asked to allow notifications for the app itself; choose Allow so the app can show optional reminders.</li>
+        <li>Optional permissions, requested only when you enable related features:
+          <ul>
+            <li>Display over other apps: needed only if you enable Nudges (small on‑screen reminders when you near your goal)</li>
+            <li>Bluetooth (connect): needed only if you enable the Headset Usage widget</li>
+            <li>Call log (READ_CALL_LOG): used only in the dev variant for the Calls widget; the Play version does not request this</li>
+          </ul>
+        </li>
+      </ol>
+      <p><strong>Tip:</strong> If a widget looks empty, scroll to Settings inside the app and ensure it's toggled on, then check its required permission above.</p>
+    </section>
+
+    <section class="section" aria-labelledby="s3">
+      <h2 id="s3">The Home screen</h2>
+      <p>The app shows a list of widgets. You can reorder or toggle visibility in Settings:</p>
+      <ul>
+        <li>Open Mobitor → Settings → "Widget order &amp; visibility"</li>
+        <li>Use the switch to show/hide a widget and the arrows to move it up or down</li>
+      </ul>
+      <h3>Key widgets at a glance</h3>
+      <ul>
+        <li><strong>Chrono Ring:</strong> a 24‑hour circular view of today with colors for usage and categories</li>
+        <li><strong>Notifications:</strong> totals and top apps per day (swipe left/right to switch days)</li>
+        <li><strong>Weekly Social, Media, Gaming, and more:</strong> focused summaries</li>
+        <li><strong>Progress &amp; Goals:</strong> keep an eye on your daily phone‑use goal; enable Nudges for timely reminders</li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="s4">
+      <h2 id="s4">Chrono Ring — how to read it</h2>
+      <p>The ring encodes the full day (00:00–24:00) clockwise.</p>
+      <ul>
+        <li><strong>Usage density (blue):</strong> 15‑minute buckets showing how much the phone was in use. Darker = more use. Only counts real foreground use with screen on; system apps and the launcher are ignored.</li>
+        <li><strong>Sleep band (purple):</strong> detected sleep window from last night, based on inactivity between roughly 21:00 and 10:00. Any actual use above a tiny threshold cuts "holes" into the sleep band.</li>
+        <li><strong>Category bands:</strong>
+          <ul>
+            <li>Social (vermillion)</li>
+            <li>Gaming (green)</li>
+            <li>Media (orange)</li>
+          </ul>
+          These bands sit on their own tracks and are drawn when those apps were foreground.
+        </li>
+        <li><strong>Hour ticks outside the ring:</strong>
+          <ul>
+            <li>Amber ticks = notifications in that hour (longer tick = more)</li>
+            <li>Blue ticks = app launches in that hour</li>
+          </ul>
+        </li>
+        <li><strong>Center</strong>
+          <ul>
+            <li>Circular progress = today's score (0–100)</li>
+            <li>Minutes used vs. goal</li>
+          </ul>
+        </li>
+      </ul>
+      <p><strong>Interactions:</strong></p>
+      <ul>
+        <li>Tap anywhere on the ring to select an hour. A small tooltip shows usage minutes, notifications, launches, and category minutes for that hour.</li>
+        <li>The legend below the ring shows the color key.</li>
+      </ul>
+      <p><strong>Troubleshooting (Chrono Ring):</strong></p>
+      <ul>
+        <li>If the ring is empty, make sure "Usage access" is granted to Mobitor (see Setup #2 above).</li>
+        <li>If sleep looks off, remember it's inferred from inactivity and limited to a typical night window. Late nights or travel can shift it.</li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="s5">
+      <h2 id="s5">Notifications widget</h2>
+      <p>Shows totals and top 3 apps for any day.</p>
+      <ul>
+        <li>Swipe left/right to move between Today, Yesterday, and earlier days</li>
+        <li>"Manage" opens the app's settings where you can filter which apps to include</li>
+      </ul>
+      <p><strong>Required permission:</strong> Notification access. If numbers freeze for Today, try this quick repair:</p>
+      <ol>
+        <li>Open system "Notification access"</li>
+        <li>Turn OFF Mobitor, wait ~2 seconds</li>
+        <li>Turn it ON again</li>
+        <li>Return to the app; the counter should resume within a few seconds</li>
+      </ol>
+    </section>
+
+    <section class="section" aria-labelledby="s6">
+      <h2 id="s6">Sleep (settings)</h2>
+      <p>Sleep is inferred from foreground activity gaps within a night window (typically 21:00 → 10:00). You can adjust two things in Settings:</p>
+      <ul>
+        <li>Bedtime range: purely for display/context in some widgets</li>
+        <li>"Pre‑bed" window: how many minutes before detected sleep are counted as pre‑bed usage (default 120 min)</li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="s7">
+      <h2 id="s7">Goals, Progress, and Nudges</h2>
+      <ul>
+        <li>Daily phone‑use goal: set during onboarding or later in Settings</li>
+        <li>Custom category goals: create your own categories and set goals for them</li>
+        <li>Nudges: optional small pop‑ups over other apps when you are close to hitting your daily goal
+          <ul>
+            <li>To enable: Settings → toggle "Nudges"</li>
+            <li>Grant "Display over other apps" when prompted</li>
+            <li>Edit thresholds (e.g., 15, 10, 5, 1 minutes remaining) in Settings</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="s8">
+      <h2 id="s8">Headset Usage (optional)</h2>
+      <p>If you enable the Headset Usage widget, the app starts a tiny foreground service (with a small, quiet notification) to track connected headset time.</p>
+      <ul>
+        <li>You might be asked for Bluetooth permission on newer Android versions</li>
+        <li>Turn the widget off in Settings to stop the service</li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="s9">
+      <h2 id="s9">Privacy and data</h2>
+      <ul>
+        <li>All analysis happens on your device. No analytics, no cloud.</li>
+        <li>You can export summary data as CSV from the "Privacy &amp; Export" section in Settings.</li>
+        <li>See the full <a href="/privacy.html">Privacy Policy</a> for details.</li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="s10">
+      <h2 id="s10">Common issues and fixes</h2>
+      <ul>
+        <li><strong>Usage data missing:</strong>
+          <ul>
+            <li>Ensure "Usage access" is ON for Mobitor</li>
+            <li>Some vendors restrict background access; opening the app once after boot can help</li>
+          </ul>
+        </li>
+        <li><strong>Notification counts stuck on Today:</strong>
+          <ul>
+            <li>Re‑toggle Notification access as described above</li>
+          </ul>
+        </li>
+        <li><strong>Overlay prompts not appearing (Nudges):</strong>
+          <ul>
+            <li>Allow "Display over other apps" for Mobitor in system settings</li>
+          </ul>
+        </li>
+        <li><strong>Time format or locale:</strong>
+          <ul>
+            <li>The app follows your device's 12/24‑hour preference and locale formatting</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="s11">
+      <h2 id="s11">FAQ</h2>
+      <ul>
+        <li><strong>Does any data leave my phone?</strong>
+          <ul><li>No. The app processes everything locally.</li></ul>
+        </li>
+        <li><strong>Can I re‑run onboarding?</strong>
+          <ul><li>Yes. Clear app data or reinstall. Advanced users can reset from Settings where available.</li></ul>
+        </li>
+        <li><strong>Can I choose which notification apps are counted?</strong>
+          <ul><li>Yes. In Settings, open "Notification apps" and select the ones you care about.</li></ul>
+        </li>
+        <li><strong>Can I reorder or hide widgets?</strong>
+          <ul><li>Yes. Settings → "Widget order &amp; visibility"</li></ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="s12">
+      <h2 id="s12">Uninstalling</h2>
+      <p>Just uninstall like any other app. If you used the Headset Usage widget, its small notification will disappear automatically when the app is removed.</p>
+    </section>
+
+    <hr />
+
+    <section class="section">
+      <p>Need help? Contact the developer or check for updates in your app store listing.</p>
+      <p>📧 <a href="mailto:mobitor.app@gmail.com">mobitor.app@gmail.com</a></p>
+    </section>
+  </main>
+</body>
+</html>
