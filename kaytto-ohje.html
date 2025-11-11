@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mobitor – Käyttöohje</title>
+  <title>Mobitor – Käyttöohje (Suomi)</title>
   <style>
     :root { color-scheme: light dark; }
     body {
@@ -29,119 +29,126 @@
 </head>
 <body>
   <main aria-labelledby="page-title">
-    <h1 id="page-title">Mobitor — Käyttöohje</h1>
+    <h1 id="page-title">Mobitor — Käyttöohje (Suomi)</h1>
 
-    <p class="meta">Tämä opas selittää mitä sovellus näyttää, mitä oikeuksia se tarvitsee ja miten saat parhaan hyödyn jokaisesta widgetistä. Opas on kirjoitettu tavallisille käyttäjille, ei kehittäjille.</p>
-    <p class="meta"><strong>Viimeksi päivitetty:</strong> 2025-11-10</p>
+    <p class="meta">Tämä ohje kertoo mitä sovellus näyttää, mitä käyttöoikeuksia se tarvitsee ja miten saat kaiken irti pienistä näkymistä (widgeteistä). Kirjoitettu tavalliselle käyttäjälle, ei kehittäjälle.</p>
+    <p class="meta"><strong>Päivitetty:</strong> 2025-11-10</p>
 
     <hr />
 
     <section class="section" aria-labelledby="s1">
       <h2 id="s1">Mitä sovellus tekee</h2>
-      <p>Mobitor antaa sinulle selkeän ja yksityisen näkymän tämän päivän puhelimen käytöstä:</p>
+      <p>Mobitor antaa selkeän ja yksityisen näkymän tämän päivän puhelimen käyttöön:</p>
       <ul>
         <li>Milloin käytit puhelinta (15 minuutin tarkkuudella)</li>
-        <li>Todennäköinen unijakso (perustuu passiivisuuteen, keskeytettynä todellisella käytöllä)</li>
-        <li>Kuinka monta ilmoitusta ja sovelluksen käynnistystä sinulla oli tunnin mukaan</li>
-        <li>Aika, joka käytettiin laajoissa kategorioissa kuten Sosiaaliset, Pelit ja Media</li>
-        <li>Lempeä päivittäinen pisteet verrattuna tavoitteesi, sekä valinnaiset muistutukset</li>
+        <li>Todennäköinen unijakso (päätellään hiljaisuudesta; käyttö katkaisee jaksoa)</li>
+        <li>Tunnittaiset ilmoitus- ja sovelluskäynnistysmäärät</li>
+        <li>Aikakertymä pääkategorioissa: Some, Pelit, Media</li>
+        <li>Kevyt päiväsuoritus / pisteet suhteessa tavoitteeseen + halutessasi nudge-muistutukset</li>
       </ul>
-      <p>Kaikki laskelmat tehdään laitteellasi. Sovellus ei lähetä tietoja minnekään.</p>
+      <p>Kaikki lasketaan laitteella. Dataa ei lähetetä mihinkään.</p>
     </section>
 
     <section class="section" aria-labelledby="s2">
-      <h2 id="s2">Ensimmäinen käyttöönotto (suositus)</h2>
+      <h2 id="s2">Ensiasennus (suositeltu)</h2>
       <ol>
-        <li>Avaa sovellus ja seuraa lyhyttä käyttöönottoa. Jos ohitit sen, voit aina asettaa asioita myöhemmin Settings-valikon kautta.</li>
-        <li>Myönnä käyttöoikeus (vaaditaan useimmille widgeteille):
+        <li>Avaa sovellus ja käy lyhyt aloitus (onboarding) läpi. Jos ohitit, voit säätää myöhemmin Asetuksissa.</li>
+        <li>Anna Käyttötietojen käyttöoikeus (Usage access) — suurin osa widgeteistä tarvitsee tämän:
           <ul>
-            <li>Avaa: Asetukset → Tietoturva ja tietosuoja → Lisää tietoturva ja tietosuoja (tai "Erikoissovellukset") → Käyttöoikeus</li>
-            <li>Napauta "Mobitor" → Salli käyttöoikeus</li>
+            <li>Asetukset → Tietoturva &amp; yksityisyys → Erityiset käyttöoikeudet (tai "Special app access") → Käyttötiedot / Usage access</li>
+            <li>Valitse "Mobitor" → Salli</li>
           </ul>
         </li>
-        <li>Salli ilmoitusten käyttöoikeus (Notifications-widgetiä ja rikkaampaa signaalia varten):
+        <li>Anna Ilmoitusoikeus (Notification access) ilmoitus-widgettiä ja tarkempia signaaleja varten:
           <ul>
-            <li>Asetukset → Ilmoitukset → Ilmoitusten käyttöoikeus (tai "Erikoissovellukset" → Ilmoitusten käyttöoikeus)</li>
-            <li>Ota käyttöön "Mobitor"</li>
+            <li>Asetukset → Ilmoitukset → Ilmoitusten käyttöoikeus (tai Erityiset käyttöoikeudet → Notification access)</li>
+            <li>Ota Mobitor käyttöön</li>
           </ul>
         </li>
-        <li>Android 13+ voidaan pyytää sallimaan ilmoitukset sovellukselle itselleen; valitse Salli, jotta sovellus voi näyttää valinnaisia muistutuksia.</li>
-        <li>Valinnaiset oikeudet, pyydetään vain kun otat käyttöön liittyvät ominaisuudet:
+        <li>Android 13+: Järjestelmä saattaa kysyä "Allow notifications" sovellukselle. Hyväksy, jos haluat muistutukset (nudges ym.).</li>
+        <li>Valinnaiset oikeudet (pyydetään vasta kun otat vastaavan toiminnon käyttöön):
           <ul>
-            <li>Näyttö muiden sovellusten päällä: tarvitaan vain jos otat käyttöön Nudges (pienet näytön päällä olevat muistutukset, kun lähestyt tavoitettasi)</li>
-            <li>Bluetooth (yhdistäminen): tarvitaan vain jos otat käyttöön Headset Usage -widgetin</li>
-            <li>Puheluloki (READ_CALL_LOG): käytetään vain kehitysversiossa Calls-widgetiä varten; Play-versio ei pyydä tätä</li>
+            <li>Näytä muiden sovellusten päällä (Overlay): tarvitaan vain Nudges‑muistutuksiin</li>
+            <li>Bluetooth (CONNECT): vain jos otat Headset-käyttö -widgetin käyttöön</li>
+            <li>Puheluloki (READ_CALL_LOG): vain dev-versiossa Puhelut-widgetille; Play-versio ei pyydä tätä</li>
           </ul>
         </li>
       </ol>
-      <p><strong>Vinkki:</strong> Jos widget näyttää tyhjältä, vieritä Settings-valikkoon sovelluksen sisällä ja varmista, että se on kytketty päälle, tarkista sitten sen tarvitsema oikeus yllä.</p>
+      <p><strong>Vinkki:</strong> Jos widget näyttää tyhjältä, mene Asetuksiin ja varmista että se on päällä ja tarvittava oikeus annettu.</p>
     </section>
 
     <section class="section" aria-labelledby="s3">
-      <h2 id="s3">Aloitusnäyttö</h2>
-      <p>Sovellus näyttää listan widgeteistä. Voit järjestää uudelleen tai vaihtaa näkyvyyttä Settings-valikosta:</p>
+      <h2 id="s3">Etusivu</h2>
+      <p>Etusivu listaa widgetit. Voit järjestää ja piilottaa niitä:</p>
       <ul>
-        <li>Avaa Mobitor → Settings → "Widget order &amp; visibility"</li>
-        <li>Käytä kytkintä näyttääksesi/piilottaaksesi widgetin ja nuolia siirtääksesi sitä ylös tai alas</li>
+        <li>Avaa Mobitor → Asetukset → "Widgettien järjestys ja näkyvyys"</li>
+        <li>Käytä kytkintä näyttämiseen/piilottamiseen ja nuolia järjestykseen</li>
       </ul>
-      <h3>Tärkeimmät widgetit yhdellä silmäyksellä</h3>
+      <h3>Tärkeimmät widgetit nopeasti</h3>
       <ul>
-        <li><strong>Chrono Ring:</strong> 24 tunnin ympyränäkymä tästä päivästä väreillä käytölle ja kategorioille</li>
-        <li><strong>Notifications:</strong> kokonaismäärät ja parhaat sovellukset päivän mukaan (pyyhkäise vasemmalle/oikealle vaihtaaksesi päiviä)</li>
-        <li><strong>Weekly Social, Media, Gaming ja muut:</strong> kohdennetut yhteenvedot</li>
-        <li><strong>Progress &amp; Goals:</strong> pidä silmällä päivittäistä puhelimen käyttötavoitettasi; ota käyttöön Nudges ajoitetuille muistutuksille</li>
+        <li><strong>Chrono Ring:</strong> 24 h ympyräpäivä värikoodeilla</li>
+        <li><strong>Ilmoitukset:</strong> päiväkohtaiset määrät ja top-sovellukset (pyyhkäise päivissä)</li>
+        <li><strong>Viikkonäkymät:</strong> Some, Media, Pelit jne.</li>
+        <li><strong>Tavoite &amp; Nudges:</strong> seuraa päivittäistä käyttöä vs. tavoite, saat muistutuksia</li>
       </ul>
     </section>
 
     <section class="section" aria-labelledby="s4">
-      <h2 id="s4">Chrono Ring — miten sitä luetaan</h2>
-      <p>Rengas koodaa koko päivän (00:00–24:00) myötäpäivään.</p>
+      <h2 id="s4">Chrono Ring – lukeminen</h2>
+      <p>Ympyrä kuvaa koko päivän (00:00–24:00) myötäpäivään.</p>
       <ul>
-        <li><strong>Käytön tiheys (sininen):</strong> 15 minuutin ämpärit, jotka näyttävät kuinka paljon puhelinta käytettiin. Tummempi = enemmän käyttöä. Laskee vain todellisen etualalla olevan käytön näytön ollessa päällä; järjestelmäsovellukset ja käynnistysohjelma jätetään huomiotta.</li>
-        <li><strong>Unijuova (violetti):</strong> havaittu unijakso viime yöstä, perustuu passiivisuuteen noin klo 21:00 ja 10:00 välillä. Mikä tahansa todellinen käyttö pienen kynnyksen yläpuolella leikkaa "aukkoja" unijuovaan.</li>
-        <li><strong>Kategoriajuovat:</strong>
+        <li><strong>Käyttötiheys (sininen):</strong> 15 min lohkot, tummempi = enemmän käyttöä (vain ruudun päällä oleva foreground-käyttö, järjestelmä / launcher ohitettu)</li>
+        <li><strong>Uni (violetti):</strong> päätelty yöikkuna (n. 21:00–10:00), todellinen käyttö "rei'ittää" kaistan</li>
+        <li><strong>Kategorian kaistat:</strong> Some / Pelit / Media näkyvät omilla radoillaan</li>
+        <li><strong>Ulotusmerkit ulkokehällä:</strong>
           <ul>
-            <li>Social (sinipunainen)</li>
-            <li>Gaming (vihreä)</li>
-            <li>Media (oranssi)</li>
+            <li>Keltainen = ilmoituksia tunnissa</li>
+            <li>Sininen = sovelluskäynnistyksiä tunnissa</li>
           </ul>
-          Nämä juovat ovat omilla raidoillaan ja piirretään, kun kyseiset sovellukset olivat etualalla.
         </li>
-        <li><strong>Rengasmerkit (vihreät pisteet):</strong> näyttävät missä puhelimen näyttö sammutettiin tai käynnistettiin uudelleen päivän aikana</li>
+        <li><strong>Keskusta:</strong> pisteet (0–100) + minuutit vs. päiväkohtainen tavoite</li>
       </ul>
-      <p>Napauta rengasta nähdäksesi suurennuksen valitusta tuntialueesta.</p>
+      <p><strong>Vuorovaikutus:</strong></p>
+      <ul>
+        <li>Napauta segmenttiä → saat tunnin minutit, ilmoitukset, käynnistykset ja kategoriakohtaiset minuutit</li>
+        <li>Alareunan legenda kertoo värit</li>
+      </ul>
+      <p><strong>Vianmääritys:</strong></p>
+      <ul>
+        <li>Tyhjä rengas: tarkista että Usage access on annettu Mobitorille</li>
+        <li>Uni poikkeuksellinen: myöhäinen valvominen tai matkustus siirtää havaintovälejä</li>
+      </ul>
     </section>
 
     <section class="section" aria-labelledby="s5">
-      <h2 id="s5">Ilmoituslaskuri ei päivity reaaliajassa tänään</h2>
-      <p>Androidin UsageStats-rajapinta voi viivästyä. Tässä on nopea korjaus:</p>
-      <ol>
-        <li>Avaa Asetukset → Ilmoitukset → Ilmoitusten käyttöoikeus</li>
-        <li>Kytke POIS Mobitor, odota ~2 sekuntia</li>
-        <li>Kytke se PÄÄLLE uudelleen</li>
-        <li>Palaa sovellukseen; laskurin pitäisi jatkaa muutaman sekunnin sisällä</li>
-      </ol>
+      <h2 id="s5">Ilmoitukset-widget</h2>
+      <p>Päivän ilmoitusten määrä ja 3 eniten ilmoittanutta sovellusta.</p>
+      <ul>
+        <li>Pyyhkäise vasen/oikea → eri päivät</li>
+        <li>"Manage" → rajaa mukaan otettavat sovellukset</li>
+        <li>Jumi Today-näkymässä? Mene järjestelmän "Notification access" → poista Mobitor → odota 2 s → ota uudelleen käyttöön</li>
+      </ul>
     </section>
 
     <section class="section" aria-labelledby="s6">
-      <h2 id="s6">Uni (Settings)</h2>
-      <p>Uni päätelty etualalla olevan toiminnan aukoista yön aikana (tyypillisesti 21:00 → 10:00). Voit säätää kahta asiaa Settings-valikossa:</p>
+      <h2 id="s6">Uni</h2>
+      <p>Uni päätellään foreground-käyttökatkoista yöikkunassa (21:00–10:00). Voit säätää:</p>
       <ul>
-        <li>Nukkumaanmenoaika: puhtaasti näyttöä/kontekstia varten joissakin widgeteissä</li>
-        <li>"Pre‑bed" -ikkuna: kuinka monta minuuttia ennen havaittua unta lasketaan nukkumaanmenon aikaiseksi käytöksi (oletus 120 min)</li>
+        <li>Nukkumaanmenon aikaväli (näyttötarkoitus)</li>
+        <li>"Ennen nukkumaanmenoa" (pre‑bed) ikkunan pituus (oletus 120 min)</li>
       </ul>
     </section>
 
     <section class="section" aria-labelledby="s7">
-      <h2 id="s7">Tavoitteet, edistyminen ja Nudges</h2>
+      <h2 id="s7">Tavoitteet &amp; Nudges</h2>
       <ul>
-        <li>Päivittäinen puhelimen käyttötavoite: asetettu käyttöönoton aikana tai myöhemmin Settings-valikossa</li>
-        <li>Mukautetut kategoriatavoitteet: luo omia kategorioita ja aseta niille tavoitteet</li>
-        <li>Nudges: valinnaiset pienet ponnahdusikkunat muiden sovellusten päällä, kun olet lähellä päivittäisen tavoitteesi saavuttamista
+        <li>Päivittäinen puhelimen käyttöaikatavoite asetetaan aloituksessa tai Asetuksissa</li>
+        <li>Kustomoidut kategoriatavoitteet mahdollisia (omat pakettilistat)</li>
+        <li>Nudges: pienet popupit muiden sovellusten päällä kun lähestyt kynnystä
           <ul>
-            <li>Otetaksesi käyttöön: Settings → kytke "Nudges"</li>
-            <li>Myönnä "Näyttö muiden sovellusten päällä" kehotettaessa</li>
-            <li>Muokkaa kynnysarvoja (esim. 15, 10, 5, 1 minuuttia jäljellä) Settings-valikossa</li>
+            <li>Ota käyttöön: Asetukset → Nudges</li>
+            <li>Hyväksy overlay oikeus</li>
+            <li>Muokkaa kynnysarvoja (esim. 15, 10, 5, 1 min jäljellä)</li>
           </ul>
         </li>
       </ul>
@@ -149,76 +156,59 @@
 
     <section class="section" aria-labelledby="s8">
       <h2 id="s8">Headset Usage (valinnainen)</h2>
-      <p>Jos otat käyttöön Headset Usage -widgetin, sovellus käynnistää pienen etualan palvelun (pienellä, hiljaisella ilmoituksella) seuratakseen yhdistetyn kuulokkeen aikaa.</p>
+      <p>Kun otat käyttöön, pieni foreground-palvelu laskee kuulokkeiden yhdistettyä aikaa.</p>
       <ul>
-        <li>Sinulta voidaan pyytää Bluetooth-oikeus uudemmissa Android-versioissa</li>
-        <li>Kytke widget pois päältä Settings-valikossa pysäyttääksesi palvelun</li>
+        <li>Bluetooth-oikeus voidaan pyytää</li>
+        <li>Poista widget käytöstä → palvelu pysähtyy</li>
       </ul>
     </section>
 
     <section class="section" aria-labelledby="s9">
-      <h2 id="s9">Yksityisyys ja tiedot</h2>
+      <h2 id="s9">Yksityisyys &amp; data</h2>
       <ul>
-        <li>Kaikki analysointi tapahtuu laitteellasi. Ei analytiikkaa, ei pilveä.</li>
-        <li>Voit viedä yhteenvetotiedot CSV-muodossa "Privacy &amp; Export" -osiosta Settings-valikossa.</li>
-        <li>Katso täysi <a href="/privacy.html">Tietosuojakäytäntö</a> lisätietoja varten.</li>
+        <li>Kaikki laskenta laitteella</li>
+        <li>Ei analytiikkaa, ei pilvisiirtoa</li>
+        <li>Vie yhteenvedot CSV-muotoon: Asetukset → Privacy &amp; Export</li>
       </ul>
     </section>
 
     <section class="section" aria-labelledby="s10">
-      <h2 id="s10">Yleiset ongelmat ja korjaukset</h2>
+      <h2 id="s10">Yleisiä ongelmia</h2>
       <ul>
-        <li><strong>Käyttötiedot puuttuvat:</strong>
-          <ul>
-            <li>Varmista, että "Käyttöoikeus" on PÄÄLLÄ Mobitorille</li>
-            <li>Jotkut valmistajat rajoittavat taustakäyttöä; sovelluksen avaaminen kerran käynnistyksen jälkeen voi auttaa</li>
-          </ul>
-        </li>
-        <li><strong>Ilmoitusmäärät juuttuneet tänään:</strong>
-          <ul>
-            <li>Kytke uudelleen ilmoitusten käyttöoikeus kuten yllä kuvattu</li>
-          </ul>
-        </li>
-        <li><strong>Peittokuvan kehotukset eivät näy (Nudges):</strong>
-          <ul>
-            <li>Salli "Näyttö muiden sovellusten päällä" Mobitorille järjestelmäasetuksissa</li>
-          </ul>
-        </li>
-        <li><strong>Aikaformaatti tai kieli:</strong>
-          <ul>
-            <li>Sovellus seuraa laitteesi 12/24 tunnin asetusta ja kielialueen muotoilua</li>
-          </ul>
-        </li>
+        <li>Käyttö puuttuu: Usage access ei päällä</li>
+        <li>Ilmoitusmäärät jumissa: uudelleenkytke Notification access</li>
+        <li>Nudges puuttuu: anna overlay-oikeus</li>
+        <li>Kellomuoto: Sovellus seuraa laitteen 12/24 h asetusta</li>
       </ul>
     </section>
 
     <section class="section" aria-labelledby="s11">
       <h2 id="s11">UKK</h2>
       <ul>
-        <li><strong>Lähteekö mitään tietoja puhelimestani?</strong>
-          <ul><li>Ei. Sovellus käsittelee kaiken paikallisesti.</li></ul>
+        <li><strong>Lähteekö data puhelimesta?</strong>
+          <ul><li>Ei.</li></ul>
         </li>
-        <li><strong>Voinko suorittaa käyttöönoton uudelleen?</strong>
-          <ul><li>Kyllä. Tyhjennä sovelluksen tiedot tai asenna uudelleen. Edistyneet käyttäjät voivat nollata Settings-valikosta, jos saatavilla.</li></ul>
+        <li><strong>Voinko ajaa aloituksen uudelleen?</strong>
+          <ul><li>Kyllä, tyhjennä sovelluksen data tai asenna uudelleen.</li></ul>
         </li>
         <li><strong>Voinko valita mitkä ilmoitussovellukset lasketaan?</strong>
-          <ul><li>Kyllä. Settings-valikossa avaa "Notification apps" ja valitse ne, joista välität.</li></ul>
+          <ul><li>Kyllä, Asetuksissa "Notification apps".</li></ul>
         </li>
-        <li><strong>Voinko järjestää uudelleen tai piilottaa widgetejä?</strong>
-          <ul><li>Kyllä. Settings → "Widget order &amp; visibility"</li></ul>
+        <li><strong>Voinko piilottaa / järjestää widgetit?</strong>
+          <ul><li>Kyllä, Asetukset → järjestys &amp; näkyvyys.</li></ul>
         </li>
       </ul>
     </section>
 
     <section class="section" aria-labelledby="s12">
       <h2 id="s12">Poistaminen</h2>
-      <p>Poista asennus kuten mikä tahansa muu sovellus. Jos käytit Headset Usage -widgetiä, sen pieni ilmoitus katoaa automaattisesti, kun sovellus poistetaan.</p>
+      <p>Poista sovellus normaalisti. Mahdollinen headset-palvelun ilmoitus katoaa heti.</p>
     </section>
 
     <hr />
 
     <section class="section">
-      <p>Tarvitsetko apua? Ota yhteyttä kehittäjään tai tarkista päivitykset sovelluskaupan listastasi.</p>
+      <p>Apua tarvitsetko? Ota yhteyttä kehittäjään tai tarkista päivitykset sovelluskaupasta.</p>
       <p>📧 <a href="mailto:mobitor.app@gmail.com">mobitor.app@gmail.com</a></p>
     </section>
   </main>
